@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encantto3D | Catálogo Especial de Natal — Impressão 3D Sob Encomenda</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Custom Configuration (Paleta Natalina Encantto3D) -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            natal: {
+              snow: '#FAF7F0',
+              pine: '#26A65B',
+              pineHover: '#1F8E4D',
+              pineMid: '#1B7A43',
+              pineDeep: '#102A1C',
+              red: '#D9232E',
+              redHover: '#B81B24',
+              gold: '#F5B800',
+              goldHover: '#DFA600',
+              whatsapp: '#25D366',
+              ink: '#111111',
+              darkBg: '#0F1713',
+              darkCard: '#16231C',
+              darkSurface: '#1F3128',
+            }
+          },
+          boxShadow: {
+            'brutal-xs': '2px 2px 0px #111111',
+            'brutal-sm': '3px 3px 0px #111111',
+            'brutal': '4px 4px 0px #111111',
+            'brutal-lg': '6px 6px 0px #111111',
+            'brutal-gold': '4px 4px 0px #F5B800',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Neo-Brutalist Card Hover */
+    .encantto-card {
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .encantto-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #111111;
+    }
+    .dark .encantto-card:hover {
+      box-shadow: 6px 6px 0px #F5B800;
+    }
+
+    /* Tactile Neo-Brutalist Button */
+    .encantto-btn {
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+    .encantto-btn:hover {
+      transform: translate(-1px, -1px);
+    }
+    .encantto-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #111111 !important;
+    }
+
+    /* Hide horizontal scrollbar on mobile category tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Garante que selos, pílulas e botões de filtro mantenham o texto em linha única */
+    .whitespace-nowrap,
+    #categoryFilters button,
+    #resultsCount,
+    header span,
+    article span,
+    section a {
+      white-space: nowrap !important;
+      width: max-content;
+    }
+
+    /* Gentle float for showcase artwork */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    .animate-float-gentle {
+      animation: floatGentle 4.5s ease-in-out infinite;
+    }
+
+    /* Modal & Drawer Transitions */
+    .modal-backdrop {
+      transition: opacity 0.24s ease;
+    }
+    .modal-panel {
+      transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease;
+    }
+    .drawer-panel {
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF7F0;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0F1713;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #102A1C;
+      border-radius: 9999px;
+      border: 2px solid #FAF7F0;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #F5B800;
+      border: 2px solid #0F1713;
+    }
+  </style>
+</head>
+
+<body class="bg-natal-snow text-natal-ink dark:bg-natal-darkBg dark:text-white transition-colors duration-300 selection:bg-natal-red selection:text-white">
+
+  <!-- ===================================================================== -->
+  <!-- 1. CABEÇALHO FIXO (IDENTIDADE NATALINA ENCANTT03D)                     -->
+  <!-- ===================================================================== -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-white dark:bg-natal-darkCard border-b-2 border-natal-ink dark:border-natal-gold/30 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-3">
+
+        <!-- Logo 'Encantto 3D' com engrenagem no 'o' e detalhe natalino -->
+        <a href="#" class="flex items-center gap-2.5 shrink-0 group focus:outline-none">
+          <div class="flex flex-col items-start">
+            <div class="flex items-center gap-1.5 pl-7 -mb-1">
+              <svg class="w-3.5 h-3.5 text-natal-red transition-transform group-hover:rotate-12" viewBox="0 0 16 16" fill="currentColor">
+                <polygon points="8,1 10,6 15,6 11,9 12.5,14 8,11 3.5,14 5,9 1,6 6,6" />
+              </svg>
+              <span class="w-2.5 h-2.5 rounded-full bg-natal-pine border border-natal-ink inline-block"></span>
+              <svg class="w-3.5 h-3.5 text-natal-gold transition-transform group-hover:-rotate-12" viewBox="0 0 16 16">
+                <polygon points="8,2 14,13 2,13" fill="currentColor" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="flex items-center font-extrabold tracking-tight text-lg sm:text-xl text-natal-ink dark:text-white leading-none">
+              <span>Encantt</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 mx-[1px] text-natal-red dark:text-natal-gold group-hover:rotate-45 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3.5" />
+                <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77" />
+              </svg>
+              <span class="ml-1">3D</span>
+            </div>
+          </div>
+
+          <span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold whitespace-nowrap bg-natal-red text-white border-2 border-natal-ink shadow-brutal-xs">
+            <span>Natal 3D</span>
+          </span>
+        </a>
+
+        <!-- Barra de Busca Desktop ('O que você está buscando?') -->
+        <div class="hidden md:flex flex-1 max-w-md mx-4">
+          <div class="relative flex w-full rounded-full bg-white dark:bg-natal-darkSurface border-2 border-natal-ink dark:border-natal-gold/40 overflow-hidden shadow-brutal-xs focus-within:ring-2 focus-within:ring-natal-red">
+            <input
+              id="desktopSearchInput"
+              type="text"
+              inputmode="search"
+              enterkeyhint="search"
+              placeholder="O que você está buscando?"
+              aria-label="O que você está buscando?"
+              class="w-full pl-4 pr-2 py-2 text-sm bg-transparent text-natal-ink dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none"
+            />
+            <button
+              id="desktopClearSearchBtn"
+              type="button"
+              onclick="clearSearchQuery()"
+              aria-label="Limpar busca"
+              class="hidden px-2.5 text-neutral-500 hover:text-natal-red dark:text-neutral-300 dark:hover:text-natal-gold flex items-center justify-center transition-colors"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onclick="handleSearchButtonClick()"
+              aria-label="Pesquisar"
+              class="px-4 bg-natal-gold hover:bg-natal-goldHover border-l-2 border-natal-ink flex items-center justify-center text-natal-ink transition-colors"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Controles Direitos: Busca Mobile, Tema Claro/Escuro, Orçamento -->
+        <div class="flex items-center gap-2 sm:gap-2.5">
+          <button
+            id="mobileSearchToggle"
+            type="button"
+            aria-label="Abrir busca"
+            class="md:hidden p-2.5 rounded-full bg-natal-gold border-2 border-natal-ink text-natal-ink shadow-brutal-xs encantto-btn"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
+
+          <button
+            id="themeToggleBtn"
+            type="button"
+            aria-label="Alternar tema claro ou escuro"
+            title="Alternar tema claro ou escuro"
+            class="p-2.5 rounded-full bg-white dark:bg-natal-darkSurface border-2 border-natal-ink dark:border-natal-gold text-natal-ink dark:text-natal-gold shadow-brutal-xs encantto-btn"
+          >
+            <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="w-4 h-4 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+          </button>
+
+          <button
+            id="openCartBtn"
+            type="button"
+            aria-label="Abrir orçamento"
+            class="relative flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full bg-natal-gold hover:bg-natal-goldHover text-natal-ink border-2 border-natal-ink font-extrabold text-xs sm:text-sm shadow-brutal-xs encantto-btn"
+          >
+            <svg class="w-4 h-4 text-natal-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span class="hidden sm:inline">Orçamento</span>
+            <span
+              id="cartBadge"
+              class="inline-flex items-center justify-center min-w-[22px] h-5 px-1.5 text-[11px] font-extrabold rounded-full bg-natal-red text-white border border-natal-ink transition-transform"
+            >
+              0
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Busca Mobile Expansível -->
+      <div id="mobileSearchContainer" class="hidden md:hidden pb-3">
+        <div class="relative flex w-full rounded-full bg-white dark:bg-natal-darkSurface border-2 border-natal-ink overflow-hidden shadow-brutal-xs focus-within:ring-2 focus-within:ring-natal-red">
+          <input
+            id="mobileSearchInput"
+            type="text"
+            inputmode="search"
+            enterkeyhint="search"
+            placeholder="O que você está buscando?"
+            aria-label="O que você está buscando?"
+            class="w-full pl-4 pr-2 py-2 text-sm bg-transparent text-natal-ink dark:text-white placeholder-neutral-500 focus:outline-none"
+          />
+          <button
+            id="mobileClearSearchBtn"
+            type="button"
+            onclick="clearSearchQuery()"
+            aria-label="Limpar busca"
+            class="hidden px-2.5 text-neutral-500 hover:text-natal-red dark:text-neutral-300 dark:hover:text-natal-gold flex items-center justify-center transition-colors"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+          <div class="px-4 bg-natal-gold border-l-2 border-natal-ink flex items-center justify-center text-natal-ink">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- CONTEÚDO PRINCIPAL                                                    -->
+  <!-- ===================================================================== -->
+  <main id="mainContent" class="pt-16 sm:pt-20 pb-20 transition-[padding] duration-200">
+
+    <!-- =================================================================== -->
+    <!-- 2. SEÇÃO HERO (VERDE PINHEIRO #26A65B, BORDA INFERIOR #111111)      -->
+    <!-- =================================================================== -->
+    <section id="heroSection" class="relative overflow-hidden bg-natal-pine dark:bg-[#132E20] border-b-2 border-natal-ink dark:border-natal-gold/30">
+        </svg>
+
+        <svg class="hidden xl:block absolute top-4 right-4 w-9 h-9 rotate-12" viewBox="0 0 40 40" fill="none">
+          <path d="M20 9C14.5 9 11.5 13 11.5 19V24L8 27.5H32L28.5 24V19C28.5 13 25.5 9 20 9Z" fill="#F5B800" stroke="#111111" stroke-width="2.2" stroke-linejoin="round" />
+          <path d="M16.5 27.5C16.5 29.8 18 31.5 20 31.5C22 31.5 23.5 29.8 23.5 27.5" fill="#D9232E" stroke="#111111" stroke-width="2.2" />
+          <circle cx="20" cy="8.5" r="2.5" fill="#D9232E" stroke="#111111" stroke-width="1.8" />
+        </svg>
+
+        <svg class="hidden xl:block absolute bottom-4 right-5 w-9 h-9 rotate-6" viewBox="0 0 40 40" fill="none">
+          <path d="M23 33V15C23 11.2 20 8.5 16.2 8.5C12.5 8.5 9.5 11.2 9.5 15V17" stroke="#111111" stroke-width="6.5" stroke-linecap="round" />
+          <path d="M23 33V15C23 11.2 20 8.5 16.2 8.5C12.5 8.5 9.5 11.2 9.5 15V17" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" />
+          <path d="M23 28V24M23 19V16" stroke="#D9232E" stroke-width="2.8" stroke-linecap="round" />
+          <polygon points="31,10 32.3,13 35.5,13.3 33,15.4 33.7,18.5 31,16.8 28.3,18.5 29,15.4 26.5,13.3 29.7,13" fill="#F5B800" stroke="#111111" stroke-width="1.6" />
+        </svg>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+
+          <div class="lg:col-span-7 text-left">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-natal-ink border-2 border-natal-ink shadow-brutal-xs mb-6">
+              <span class="text-xs sm:text-sm font-extrabold tracking-tight text-natal-ink">
+                🎄 Coleção Especial de Natal • Impressão 3D Sob Encomenda
+              </span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-natal-ink dark:text-white">
+              Deixe seu Natal mais
+              <span class="inline-block my-1.5 px-4 sm:px-5 py-1 sm:py-1.5 rounded-2xl bg-natal-red text-white border-2 border-natal-ink shadow-brutal -rotate-1">
+                criativo e único
+              </span>
+              em 3D
+            </h1>
+
+            <p class="mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg font-medium leading-relaxed text-natal-ink dark:text-neutral-100">
+              Enfeites personalizados para árvore, presépios modernos, litofanias iluminadas e presentes exclusivos impressos camada por camada com acabamento impecável na Encantto3D.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
+              <a
+                href="#catalogo"
+                class="inline-flex items-center justify-center px-7 py-3.5 rounded-full whitespace-nowrap bg-natal-red hover:bg-natal-redHover text-white font-extrabold text-sm sm:text-base border-2 border-natal-ink shadow-brutal encantto-btn"
+              >
+                Explorar Catálogo
+              </a>
+              <a
+                href="#encomenda-personalizada"
+                class="inline-flex items-center justify-center px-7 py-3.5 rounded-full whitespace-nowrap bg-white hover:bg-natal-snow text-natal-ink font-extrabold text-sm sm:text-base border-2 border-natal-ink shadow-brutal encantto-btn"
+              >
+                Encomenda Personalizada
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-full max-w-md">
+              <div class="absolute -top-3.5 right-3 z-20 px-4 py-1.5 rounded-full whitespace-nowrap bg-natal-red text-white font-extrabold text-xs sm:text-sm border-2 border-natal-ink shadow-brutal-sm rotate-2">
+                ✨ PLA Silk &amp; Fosco
+              </div>
+
+              <div class="rounded-3xl bg-white dark:bg-natal-darkCard border-2 border-natal-ink shadow-brutal-lg p-6 sm:p-8 flex flex-col items-center justify-center">
+                <div class="w-full h-56 sm:h-64 flex items-center justify-center animate-float-gentle">
+                  <svg viewBox="0 0 280 240" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="44" y="24" width="16" height="176" rx="4" fill="#111111" />
+                    <rect x="220" y="24" width="16" height="176" rx="4" fill="#111111" />
+                    <rect x="36" y="20" width="208" height="18" rx="6" fill="#111111" />
+                    <rect x="56" y="72" width="168" height="10" rx="3" fill="#111111" />
+                    <circle cx="228" cy="54" r="24" fill="#F5B800" stroke="#111111" stroke-width="4" />
+                    <circle cx="228" cy="54" r="7" fill="#111111" />
+                    <rect x="146" y="58" width="38" height="36" rx="8" fill="#D9232E" stroke="#111111" stroke-width="4" />
+                    <polygon points="159,94 171,94 165,106" fill="#111111" />
+                    <path d="M165 108C165 114 156 113 149 108" stroke="#D9232E" stroke-width="3.8" stroke-linecap="round" stroke-dasharray="2 6" />
+                    <rect x="64" y="182" width="152" height="14" rx="7" fill="#1B7A43" stroke="#111111" stroke-width="4" />
+                    <rect x="133" y="169" width="14" height="12" rx="2.5" fill="#78350F" stroke="#111111" stroke-width="3" />
+                    <polygon points="140,142 175,170 105,170" fill="#26A65B" stroke="#111111" stroke-width="3.2" stroke-linejoin="round" />
+                    <polygon points="140,126 168,152 112,152" fill="#26A65B" stroke="#111111" stroke-width="3.2" stroke-linejoin="round" />
+                    <polygon points="140,111 160,135 120,135" fill="#26A65B" stroke="#111111" stroke-width="3.2" stroke-linejoin="round" />
+                    <circle cx="135" cy="128" r="3.5" fill="#D9232E" stroke="#111111" stroke-width="2" />
+                    <circle cx="147" cy="143" r="3.8" fill="#F5B800" stroke="#111111" stroke-width="2" />
+                    <circle cx="129" cy="145" r="3.5" fill="#D9232E" stroke="#111111" stroke-width="2" />
+                    <circle cx="121" cy="162" r="4" fill="#F5B800" stroke="#111111" stroke-width="2" />
+                    <circle cx="140" cy="160" r="4" fill="#D9232E" stroke="#111111" stroke-width="2" />
+                    <circle cx="158" cy="162" r="4" fill="#F5B800" stroke="#111111" stroke-width="2" />
+                    <polygon points="140,98 142.8,104 149.2,104.8 144.4,109 145.8,115.2 140,112 134.2,115.2 135.6,109 130.8,104.8 137.2,104" fill="#F5B800" stroke="#111111" stroke-width="2.4" stroke-linejoin="round" />
+                    <polygon points="92,116 95,123 102,124 96,129 98,136 92,132 86,136 88,129 82,124 89,123" fill="#F5B800" stroke="#111111" stroke-width="2.5" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="absolute -bottom-3.5 left-3 z-20 px-4 py-1.5 rounded-full whitespace-nowrap bg-natal-gold text-natal-ink font-extrabold text-xs sm:text-sm border-2 border-natal-ink shadow-brutal-sm -rotate-1">
+                🎁 Feito sob medida
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 3. FAIXA DIVISÓRIA VERDE-ESCURO PINHEIRO (#102A1C)                  -->
+    <!-- =================================================================== -->
+    <div id="marqueeStrip" aria-hidden="true" class="bg-natal-pineDeep text-natal-gold border-b-2 border-natal-ink py-3 overflow-hidden select-none">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-start lg:justify-between gap-5 text-xs font-extrabold tracking-wider uppercase whitespace-nowrap overflow-x-auto no-scrollbar">
+        <span class="inline-flex items-center gap-2">ENFEITES PERSONALIZADOS <span class="text-natal-red text-sm">✦</span></span>
+        <span class="inline-flex items-center gap-2">PRESÉPIOS 3D <span class="text-natal-gold text-sm">✦</span></span>
+        <span class="inline-flex items-center gap-2">LITOFANIAS COM FOTO <span class="text-natal-red text-sm">✦</span></span>
+        <span class="inline-flex items-center gap-2">PRESENTES CRIATIVOS <span class="text-natal-gold text-sm">✦</span></span>
+        <span class="inline-flex items-center gap-2">RETIRADA EM CAMPINAS <span class="text-natal-red text-sm">✦</span></span>
+        <span class="inline-flex items-center gap-2">ENCOMENDAS DE NATAL <span class="text-natal-gold text-sm">✦</span></span>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- 4. CATÁLOGO DE PRODUTOS (FUNDO 100% LIMPO #FAF7F0 / #0F1713)        -->
+    <!-- =================================================================== -->
+    <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 scroll-mt-24">
+
+      <!-- Cabeçalho da Seção do Catálogo -->
+      <div class="mb-6">
+        <span id="catalogBadge" class="inline-flex items-center px-3.5 py-1 rounded-full whitespace-nowrap bg-natal-pineDeep text-natal-gold text-[11px] font-extrabold uppercase tracking-wider mb-2.5 border border-natal-ink">
+          Catálogo Oficial de Natal
+        </span>
+        <h2 id="catalogHeading" class="text-2xl sm:text-3xl font-black tracking-tight text-natal-ink dark:text-white">
+          Escolha suas peças e cores 3D
+        </h2>
+      </div>
+
+      <!-- Barra de Filtros por Categoria -->
+      <div class="pb-6">
+        <div id="categoryFilters" class="flex flex-wrap items-center gap-2.5" role="tablist" aria-label="Filtrar por categoria">
+          <!-- Renderizado via JS -->
+        </div>
+      </div>
+
+      <!-- Barra de Status dos Resultados -->
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6 text-xs">
+        <p id="resultsCount" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full whitespace-nowrap bg-natal-pineDeep text-natal-gold font-extrabold border border-natal-ink">
+          Exibindo 26 produtos natalinos
+        </p>
+        <button
+          id="resetFiltersBtn"
+          type="button"
+          class="hidden px-3.5 py-1.5 rounded-full whitespace-nowrap bg-natal-red text-white border-2 border-natal-ink shadow-brutal-xs font-extrabold encantto-btn"
+        >
+          Limpar filtros
+        </button>
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- [LOCAL 1 DE 3] ONDE OS CARDS DO CATÁLOGO SÃO EXIBIDOS NO HTML     -->
+      <!-- A <div id="productsGrid"> abaixo é a grade que recebe todos os    -->
+      <!-- cards gerados pela função renderProductsGrid() no <script>.       -->
+      <!-- ================================================================= -->
+      <div id="productsGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+        <!-- Os cards dos produtos são injetados automaticamente aqui -->
+      </div>
+      <!-- ================================================================= -->
+
+      <!-- Estado Vazio (Busca / Filtro sem correspondência) -->
+      <div id="emptyState" class="hidden py-14 px-6 text-center rounded-3xl bg-white dark:bg-natal-darkCard border-2 border-natal-ink dark:border-natal-gold/30 shadow-brutal">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-natal-gold border-2 border-natal-ink shadow-brutal-xs flex items-center justify-center text-natal-ink">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-natal-ink dark:text-white">Nenhuma peça encontrada</h3>
+        <p class="text-sm text-neutral-600 dark:text-neutral-300 mt-1 max-w-md mx-auto">
+          Tente buscar por outro termo ou remova os filtros selecionados para ver todo o catálogo de Natal.
+        </p>
+        <button
+          type="button"
+          onclick="resetAllFilters()"
+          class="mt-5 px-6 py-2.5 rounded-full bg-natal-red text-white border-2 border-natal-ink shadow-brutal-sm font-extrabold text-xs encantto-btn"
+        >
+          Mostrar todos os produtos
+        </button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 5. BANNER DE ENCOMENDA SOB MEDIDA (VERMELHO NATALINO #D9232E)       -->
+    <!-- =================================================================== -->
+    <section id="encomenda-personalizada" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 scroll-mt-24">
+      <div class="relative overflow-hidden rounded-3xl bg-natal-red dark:bg-[#3A1014] border-2 border-natal-ink dark:border-natal-gold shadow-brutal-lg p-7 sm:p-10 lg:p-12">
+        <div aria-hidden="true" class="pointer-events-none select-none">
+          <svg class="hidden xl:block absolute top-3.5 right-4 w-8 h-8 rotate-12" viewBox="0 0 40 40" fill="none">
+            <path d="M10 26C10 17 16 11 23.5 11C28.5 11 31 14 32 18.5L27 19.5C26 17 24.5 16 22 16C18.5 16 16 19.5 16 26H10Z" fill="#26A65B" stroke="#111111" stroke-width="2.2" stroke-linejoin="round" />
+            <rect x="7.5" y="24.5" width="20" height="6" rx="3" fill="#FFFFFF" stroke="#111111" stroke-width="2.2" />
+            <circle cx="31" cy="19.5" r="3.5" fill="#F5B800" stroke="#111111" stroke-width="2.2" />
+          </svg>
+          <svg class="hidden xl:block absolute bottom-3.5 right-4 w-8 h-8 -rotate-12" viewBox="0 0 40 40" fill="none">
+            <polygon points="20,6 23.8,14.5 33,15.5 26,21.8 28,31 20,26.2 12,31 14,21.8 7,15.5 16.2,14.5" fill="#F5B800" stroke="#111111" stroke-width="2.2" stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <div class="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-natal-pineDeep text-natal-gold text-xs font-extrabold uppercase tracking-wide mb-4 border border-natal-ink">
+              <span class="text-natal-red">✦</span>
+              Projeto Exclusivo &amp; Sob Demanda
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              Tem uma ideia especial para este Natal?
+            </h2>
+            <p class="mt-3 text-sm sm:text-base font-medium text-white/95 leading-relaxed">
+              Criamos brindes corporativos com logotipo, topos de bolo personalizados, personagens exclusivos e peças sob medida a partir de referências ou arquivos .STL. Conte sua ideia para nossa equipe!
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+            <button
+              type="button"
+              onclick="openCustomIdeaModal()"
+              class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-natal-gold hover:bg-natal-goldHover text-natal-ink font-extrabold text-sm border-2 border-natal-ink shadow-brutal encantto-btn"
+            >
+              <span>Solicitar Orçamento Personalizado</span>
+            </button>
+            <button
+              type="button"
+              onclick="openDirectWhatsApp()"
+              class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-white hover:bg-natal-snow text-natal-ink font-extrabold text-xs border-2 border-natal-ink shadow-brutal-xs encantto-btn"
+            >
+              <span>Chamar direto no WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- RODAPÉ                                                                -->
+  <!-- ===================================================================== -->
+  <footer class="border-t-2 border-natal-ink bg-white dark:bg-natal-darkCard">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2.5">
+          <span class="font-black text-base text-natal-ink dark:text-white">
+            Encantto<span class="text-natal-red">3D</span>
+          </span>
+          <span class="text-natal-ink dark:text-white/40 font-bold">•</span>
+          <span class="text-xs font-semibold text-neutral-700 dark:text-neutral-300">
+            Impressão 3D &amp; Presentes Personalizados
+          </span>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-neutral-700 dark:text-neutral-300">
+          <span class="inline-flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-natal-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Parque Prado, Campinas — SP
+          </span>
+          <span>•</span>
+          <span>WhatsApp: (19) 99592-2620</span>
+          <span>•</span>
+          <span>© 2026 Encantto3D. Todos os direitos reservados.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- BOTÃO FLUTUANTE WHATSAPP (CANTO INFERIOR DIREITO)                     -->
+  <!-- ===================================================================== -->
+  <button
+    type="button"
+    onclick="openDirectWhatsApp()"
+    aria-label="Falar com a Encantto3D no WhatsApp"
+    title="Falar com a Encantto3D no WhatsApp"
+    class="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-natal-whatsapp text-white border-2 border-natal-ink shadow-brutal flex items-center justify-center encantto-btn"
+  >
+    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.758.459 3.473 1.332 4.986L2 22l5.184-1.359a9.927 9.927 0 0 0 4.847 1.26h.004c5.515 0 9.968-4.453 9.968-9.969A9.93 9.93 0 0 0 19.08 4.92 9.903 9.903 0 0 0 12.031 2Zm5.814 14.254c-.246.693-1.434 1.326-1.988 1.408-.508.076-1.15.108-1.855-.117-.428-.136-.977-.318-1.68-.621-2.957-1.277-4.888-4.255-5.035-4.451-.148-.197-1.203-1.601-1.203-3.054 0-1.453.761-2.168 1.031-2.463.27-.295.59-.369.787-.369.197 0 .393.002.565.01.181.009.424-.069.663.506.246.591.836 2.042.909 2.19.074.148.123.32.025.517-.098.197-.148.32-.295.492-.148.172-.31.384-.443.516-.148.147-.302.307-.13.602.172.295.765 1.262 1.643 2.044 1.129 1.007 2.081 1.319 2.376 1.467.295.148.467.123.639-.074.172-.197.738-.861.935-1.156.197-.295.393-.246.663-.148.27.099 1.721.812 2.016.96.295.147.492.221.565.344.074.123.074.713-.172 1.406Z"/>
+    </svg>
+  </button>
+
+  <!-- ===================================================================== -->
+  <!-- 6. MODAL DE ESCOLHA DE COR DO PRODUTO                                 -->
+  <!-- ===================================================================== -->
+  <div
+    id="productModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+    <div
+      id="modalBackdrop"
+      class="modal-backdrop fixed inset-0 bg-black/65 backdrop-blur-sm opacity-0"
+      onclick="closeProductModal()"
+    ></div>
+
+    <div
+      id="modalPanel"
+      class="modal-panel relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-natal-darkCard border-2 border-natal-ink dark:border-natal-gold shadow-brutal-lg opacity-0 scale-95"
+    >
+      <!-- Botão Fechar -->
+      <button
+        type="button"
+        onclick="closeProductModal()"
+        aria-label="Fechar janela"
+        class="absolute top-4 right-4 z-20 p-2 rounded-full bg-natal-snow dark:bg-natal-darkSurface text-natal-ink dark:text-white border-2 border-natal-ink shadow-brutal-xs encantto-btn"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-12">
+        <!-- Vitrine Esquerda (Verde Pinheiro Natalino) -->
+        <div class="md:col-span-5 relative flex flex-col items-center justify-center p-6 sm:p-8 bg-natal-pine dark:bg-[#132E20] border-b-2 md:border-b-0 md:border-r-2 border-natal-ink">
+          <div id="modalArtworkContainer" class="relative w-44 h-44 sm:w-48 sm:h-48 flex items-center justify-center animate-float-gentle">
+            <!-- Imagem ou SVG injetado via JS conforme a cor selecionada -->
+          </div>
+
+          <div class="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-natal-ink border-2 border-natal-ink shadow-brutal-xs text-xs font-extrabold">
+            <span id="modalColorDot" class="w-3 h-3 rounded-full border border-natal-ink"></span>
+            <span id="modalColorLabel">Vermelho &amp; Ouro</span>
+          </div>
+        </div>
+
+        <!-- Controles Direitos -->
+        <div class="md:col-span-7 p-6 sm:p-7 flex flex-col justify-between bg-white dark:bg-natal-darkCard">
+          <div>
+            <div class="flex flex-wrap items-center gap-2 text-xs mb-2.5 pr-8">
+              <span id="modalCategory" class="px-2.5 py-0.5 rounded-full font-extrabold bg-natal-pineDeep text-natal-gold">Categoria</span>
+              <span id="modalSpecs" class="font-semibold text-neutral-600 dark:text-neutral-300">Especificação</span>
+            </div>
+
+            <h3 id="modalTitle" class="text-xl sm:text-2xl font-black tracking-tight text-natal-ink dark:text-white pr-6">
+              Nome do Produto
+            </h3>
+
+            <p id="modalDescription" class="mt-2 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              Descrição detalhada do item.
+            </p>
+
+            <div class="mt-4 flex items-baseline gap-2">
+              <span id="modalPrice" class="text-2xl font-black text-natal-ink dark:text-natal-gold">R$ 0,00</span>
+              <span class="text-xs font-semibold text-neutral-500 dark:text-neutral-400">/ unidade</span>
+            </div>
+
+            <hr class="my-4 border-t-2 border-natal-ink/15 dark:border-white/15" />
+
+            <!-- Seletor de Cor da Peça (3 opções por produto) -->
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <label class="text-xs font-extrabold uppercase tracking-wider text-natal-ink dark:text-neutral-300">
+                  Opções de Cor
+                </label>
+                <span id="selectedFilamentName" class="text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-natal-snow dark:bg-natal-darkSurface border border-natal-ink text-natal-ink dark:text-natal-gold">
+                  Vermelho &amp; Ouro
+                </span>
+              </div>
+              <div id="filamentSwatches" class="flex flex-wrap gap-2">
+                <!-- Opções de cor renderizadas via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Quantidade + Botão Adicionar ao Orçamento -->
+          <div class="mt-6 pt-4 border-t-2 border-natal-ink/15 dark:border-white/15 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div class="flex items-center justify-between sm:justify-start rounded-full bg-natal-snow dark:bg-natal-darkSurface border-2 border-natal-ink p-1 shadow-brutal-xs">
+              <button
+                type="button"
+                onclick="updateModalQty(-1)"
+                aria-label="Diminuir quantidade"
+                class="w-8 h-8 rounded-full flex items-center justify-center text-natal-ink dark:text-white hover:bg-natal-gold hover:text-natal-ink font-extrabold transition-colors"
+              >
+                −
+              </button>
+              <span id="modalQtyDisplay" class="w-9 text-center text-sm font-extrabold text-natal-ink dark:text-white">
+                1
+              </span>
+              <button
+                type="button"
+                onclick="updateModalQty(1)"
+                aria-label="Aumentar quantidade"
+                class="w-8 h-8 rounded-full flex items-center justify-center text-natal-ink dark:text-white hover:bg-natal-gold hover:text-natal-ink font-extrabold transition-colors"
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onclick="addConfiguredProductToCart()"
+              class="flex-1 py-3 px-4 rounded-full bg-natal-red hover:bg-natal-redHover text-white font-extrabold text-xs sm:text-sm border-2 border-natal-ink shadow-brutal-sm encantto-btn flex items-center justify-center gap-1.5"
+            >
+              <span>Adicionar ao Orçamento</span>
+              <span id="modalSubtotalBtn" class="font-black">• R$ 18,90</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL DE ENCOMENDA PERSONALIZADA                                      -->
+  <!-- ===================================================================== -->
+  <div
+    id="customIdeaModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="customIdeaTitle"
+  >
+    <div
+      id="customIdeaBackdrop"
+      class="modal-backdrop fixed inset-0 bg-black/65 backdrop-blur-sm opacity-0"
+      onclick="closeCustomIdeaModal()"
+    ></div>
+
+    <div
+      id="customIdeaPanel"
+      class="modal-panel relative z-10 w-full max-w-lg rounded-3xl bg-white dark:bg-natal-darkCard border-2 border-natal-ink dark:border-natal-gold shadow-brutal-lg opacity-0 scale-95 overflow-hidden"
+    >
+      <div class="px-6 py-5 bg-natal-pine dark:bg-[#132E20] border-b-2 border-natal-ink flex items-center justify-between">
+        <div>
+          <span class="inline-block px-2.5 py-0.5 rounded-full bg-natal-pineDeep text-natal-gold text-[10px] font-extrabold uppercase mb-1">
+            Sob Medida Encantto3D
+          </span>
+          <h3 id="customIdeaTitle" class="text-lg sm:text-xl font-black text-natal-ink dark:text-white">
+            Encomenda Especial de Natal
+          </h3>
+        </div>
+        <button
+          type="button"
+          onclick="closeCustomIdeaModal()"
+          aria-label="Fechar janela"
+          class="p-2 rounded-full bg-white text-natal-ink border-2 border-natal-ink shadow-brutal-xs encantto-btn"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <form onsubmit="submitCustomIdeaForm(event)" class="p-6 space-y-4">
+        <div>
+          <label for="ideaNameInput" class="block text-xs font-extrabold uppercase tracking-wider text-natal-ink dark:text-neutral-300 mb-1.5">
+            Seu Nome *
+          </label>
+          <input
+            id="ideaNameInput"
+            type="text"
+            required
+            placeholder="Como podemos te chamar?"
+            class="w-full px-3.5 py-2.5 text-sm rounded-xl bg-natal-snow dark:bg-natal-darkSurface border-2 border-natal-ink text-natal-ink dark:text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-natal-red"
+          />
+        </div>
+
+        <div>
+          <label for="ideaTypeSelect" class="block text-xs font-extrabold uppercase tracking-wider text-natal-ink dark:text-neutral-300 mb-1.5">
+            Tipo de Projeto
+          </label>
+          <select
+            id="ideaTypeSelect"
+            class="w-full px-3.5 py-2.5 text-sm rounded-xl bg-natal-snow dark:bg-natal-darkSurface border-2 border-natal-ink text-natal-ink dark:text-white focus:outline-none focus:ring-2 focus:ring-natal-red"
+          >
+            <option value="Brindes Corporativos com Logo">Brindes Corporativos com Logo</option>
+            <option value="Enfeites de Natal com Nomes da Família">Enfeites de Natal com Nomes da Família</option>
+            <option value="Topo de Bolo / Decoração de Mesa">Topo de Bolo / Decoração de Mesa</option>
+            <option value="Impressão de Arquivo .STL Próprio">Impressão de Arquivo .STL Próprio</option>
+            <option value="Outra Ideia Criativa em 3D">Outra Ideia Criativa em 3D</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="ideaDetailsInput" class="block text-xs font-extrabold uppercase tracking-wider text-natal-ink dark:text-neutral-300 mb-1.5">
+            Descreva sua ideia (cores, quantidade, prazo) *
+          </label>
+          <textarea
+            id="ideaDetailsInput"
+            rows="3"
+            required
+            placeholder="Ex: Gostaria de 15 chaveiros natalinos com a logo da minha empresa em verde e dourado..."
+            class="w-full px-3.5 py-2.5 text-sm rounded-xl bg-natal-snow dark:bg-natal-darkSurface border-2 border-natal-ink text-natal-ink dark:text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-natal-red"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full py-3.5 px-5 rounded-full bg-natal-red hover:bg-natal-redHover text-white font-extrabold text-sm border-2 border-natal-ink shadow-brutal encantto-btn"
+        >
+          Enviar Ideia para o WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 7. GAVETA LATERAL DE ORÇAMENTO                                        -->
+  <!-- ===================================================================== -->
+  <div
+    id="cartDrawer"
+    class="fixed inset-0 z-50 hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="drawerTitle"
+  >
+    <div
+      id="drawerBackdrop"
+      class="modal-backdrop fixed inset-0 bg-black/60 backdrop-blur-sm opacity-0"
+      onclick="closeCartDrawer()"
+    ></div>
+
+    <aside
+      id="drawerPanel"
+      class="drawer-panel fixed top-0 right-0 bottom-0 z-10 w-full max-w-md bg-natal-snow dark:bg-natal-darkBg border-l-2 border-natal-ink dark:border-natal-gold shadow-2xl flex flex-col translate-x-full"
+    >
+      <!-- Cabeçalho da Gaveta -->
+      <div class="px-6 py-5 bg-natal-pine dark:bg-natal-darkCard border-b-2 border-natal-ink flex items-center justify-between">
+        <div>
+          <h2 id="drawerTitle" class="text-lg font-black text-natal-ink dark:text-white">
+            Seu Orçamento de Natal
+          </h2>
+          <p class="text-xs font-semibold text-natal-ink/85 dark:text-neutral-300">
+            Revise suas peças e finalize pelo WhatsApp
+          </p>
+        </div>
+        <button
+          type="button"
+          onclick="closeCartDrawer()"
+          aria-label="Fechar orçamento"
+          class="p-2 rounded-full bg-white text-natal-ink border-2 border-natal-ink shadow-brutal-xs encantto-btn"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Corpo da Gaveta -->
+      <div class="flex-1 overflow-y-auto px-6 py-5 space-y-6">
+        <div id="cartItemsContainer" class="space-y-3.5">
+          <!-- Itens renderizados via JS -->
+        </div>
+
+        <!-- Estado Carrinho Vazio -->
+        <div id="emptyCartMessage" class="py-12 px-4 text-center rounded-3xl bg-white dark:bg-natal-darkCard border-2 border-natal-ink shadow-brutal">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-natal-gold border-2 border-natal-ink shadow-brutal-xs flex items-center justify-center text-natal-ink">
+            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </div>
+          <p class="text-sm font-extrabold text-natal-ink dark:text-white">Seu orçamento está vazio</p>
+          <p class="text-xs font-medium text-neutral-600 dark:text-neutral-300 mt-1 max-w-xs mx-auto">
+            Escolha suas peças natalinas no catálogo e selecione as cores desejadas.
+          </p>
+          <button
+            type="button"
+            onclick="closeCartDrawer()"
+            class="mt-5 px-5 py-2.5 rounded-full bg-natal-red text-white border-2 border-natal-ink shadow-brutal-xs font-extrabold text-xs encantto-btn"
+          >
+            Explorar Catálogo
+          </button>
+        </div>
+
+        <!-- Dados do Pedido (visível quando há itens) -->
+        <div id="checkoutFormSection" class="hidden space-y-4 pt-4 border-t-2 border-natal-ink/15 dark:border-white/15">
+          <div>
+            <label for="customerNameInput" class="block text-xs font-extrabold uppercase tracking-wider text-natal-ink dark:text-neutral-300 mb-1.5">
+              Seu Nome *
+            </label>
+            <input
+              id="customerNameInput"
+              type="text"
+              placeholder="Digite seu nome completo"
+              class="w-full px-3.5 py-2.5 text-sm rounded-xl bg-white dark:bg-natal-darkCard border-2 border-natal-ink text-natal-ink dark:text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-natal-red"
+            />
+            <p id="customerNameError" class="hidden mt-1 text-xs text-natal-red font-bold">
+              Por favor, informe seu nome para identificar o orçamento.
+            </p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-extrabold uppercase tracking-wider text-natal-ink dark:text-neutral-300 mb-2">
+              Como deseja receber?
+            </label>
+            <div class="grid grid-cols-1 gap-2.5">
+              <button
+                type="button"
+                id="pickupOptionBtn"
+                onclick="setDeliveryMethod('Retirada na Loja (Parque Prado, Campinas)')"
+                class="flex items-center justify-between gap-3 p-3 rounded-2xl border-2 text-left transition-all"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span id="pickupRadioDot" class="w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center"></span>
+                  <div class="min-w-0">
+                    <p class="text-xs font-extrabold text-natal-ink dark:text-white leading-snug">Retirada na Loja (Parque Prado, Campinas)</p>
+                    <p class="text-[11px] font-medium text-neutral-600 dark:text-neutral-300 mt-0.5">Sem custo de frete</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full whitespace-nowrap shrink-0 text-[11px] font-extrabold bg-natal-gold text-natal-ink border border-natal-ink">Grátis</span>
+              </button>
+
+              <button
+                type="button"
+                id="deliveryOptionBtn"
+                disabled
+                aria-disabled="true"
+                class="flex items-center justify-between gap-3 p-3 rounded-2xl border-2 border-neutral-950 bg-neutral-800 dark:bg-neutral-900 text-left cursor-not-allowed select-none opacity-90"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span id="deliveryRadioDot" class="w-4 h-4 rounded-full border-2 border-neutral-600 bg-neutral-900 shrink-0 flex items-center justify-center"></span>
+                  <div class="min-w-0">
+                    <p class="text-xs font-extrabold text-neutral-300 leading-snug">Entrega</p>
+                    <p class="text-[11px] font-medium text-neutral-400 mt-0.5">Campinas e Região (temporariamente indisponível)</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full whitespace-nowrap shrink-0 text-[11px] font-extrabold bg-neutral-700 text-neutral-300 border border-neutral-600">Indisponível</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé da Gaveta -->
+      <div id="drawerFooter" class="hidden px-6 py-5 border-t-2 border-natal-ink bg-white dark:bg-natal-darkCard space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-neutral-700 dark:text-neutral-300">Subtotal Estimado</span>
+          <span id="cartTotalDisplay" class="text-xl font-black text-natal-ink dark:text-natal-gold">R$ 0,00</span>
+        </div>
+
+        <button
+          type="button"
+          onclick="finalizeWhatsAppOrder()"
+          class="w-full py-3.5 px-5 rounded-full bg-natal-whatsapp hover:brightness-105 text-natal-ink font-extrabold text-sm border-2 border-natal-ink shadow-brutal encantto-btn flex items-center justify-center gap-2"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.758.459 3.473 1.332 4.986L2 22l5.184-1.359a9.927 9.927 0 0 0 4.847 1.26h.004c5.515 0 9.968-4.453 9.968-9.969A9.93 9.93 0 0 0 19.08 4.92 9.903 9.903 0 0 0 12.031 2Zm5.814 14.254c-.246.693-1.434 1.326-1.988 1.408-.508.076-1.15.108-1.855-.117-.428-.136-.977-.318-1.68-.621-2.957-1.277-4.888-4.255-5.035-4.451-.148-.197-1.203-1.601-1.203-3.054 0-1.453.761-2.168 1.031-2.463.27-.295.59-.369.787-.369.197 0 .393.002.565.01.181.009.424-.069.663.506.246.591.836 2.042.909 2.19.074.148.123.32.025.517-.098.197-.148.32-.295.492-.148.172-.31.384-.443.516-.148.147-.302.307-.13.602.172.295.765 1.262 1.643 2.044 1.129 1.007 2.081 1.319 2.376 1.467.295.148.467.123.639-.074.172-.197.738-.861.935-1.156.197-.295.393-.246.663-.148.27.099 1.721.812 2.016.96.295.147.492.221.565.344.074.123.074.713-.172 1.406Z"/>
+          </svg>
+          Enviar Orçamento no WhatsApp
+        </button>
+
+        <button
+          type="button"
+          onclick="copyOrderSummary()"
+          class="w-full py-2.5 px-4 rounded-full bg-natal-snow dark:bg-natal-darkSurface hover:bg-natal-gold hover:text-natal-ink border-2 border-natal-ink text-natal-ink dark:text-white font-extrabold text-xs shadow-brutal-xs encantto-btn flex items-center justify-center gap-1.5"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+          </svg>
+          Copiar Resumo do Orçamento
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- NOTIFICAÇÃO TOAST                                                     -->
+  <!-- ===================================================================== -->
+  <div
+    id="toastNotification"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-5 left-1/2 -translate-x-1/2 z-[60] pointer-events-none opacity-0 translate-y-3 transition-all duration-300"
+  >
+    <div class="flex items-center gap-2.5 px-4 py-3 rounded-full bg-natal-pineDeep text-natal-gold border-2 border-natal-gold shadow-brutal text-xs sm:text-sm font-extrabold">
+      <span class="w-2.5 h-2.5 rounded-full bg-natal-red"></span>
+      <span id="toastMessage">Item adicionado ao orçamento!</span>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- LÓGICA DA APLICAÇÃO E ILUSTRAÇÕES VETORIAIS SVG                       -->
+  <!-- ===================================================================== -->
+  <script>
+    // Número oficial WhatsApp Encantto3D (Campinas - SP): +55 19 99592-2620
+    const WHATSAPP_PHONE = '5519995922620';
+
+    // Categorias do Catálogo
+    const CATEGORIES = [
+      'Todos',
+      'Crochê',
+      'Enfeites de Árvore',
+      'Decoração & Presépios',
+      'Litofanias',
+      'Presentes & Articulados'
+    ];
+
+    /**
+- =========================================================================
+- [LOCAL 2 DE 3] LISTA DE PRODUTOS, PREÇOS, CORES E LINKS DAS IMAGENS
+- -------------------------------------------------------------------------
+- É AQUI QUE VOCÊ EDITA CADA ITEM DO CATÁLOGO:
+- - name: Nome do produto no card
+- - specs: Subtítulo técnico abaixo do nome
+- - price: Preço numérico (ex: 18.90)
+- - category: Categoria usada nos filtros
+- - colorOptions: As opções de cor de cada item.
+-   -> Para colocar suas fotos reais depois, basta colar o link ou
+-      caminho do arquivo dentro de `imageUrl: 'AQUI'` em cada cor!
+- =========================================================================
+     */
+
+
+// ITENS DO CATÁLOGO ----------------------------------------------------------------------------------------------
+
+    const PRODUCTS = [
+      { id: 'bandeja-natalina', name: 'Bandeja Natalina', specs: 'Peça decorativa', description: 'Bandeja com tema natalino.', price: 59.90, category: 'Presentes & Articulados', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/bandeja.png' }] },
+      { id: 'cortadores-biscoito', name: 'Conjunto de Cortadores de Biscoito', specs: 'Conjunto natalino', description: 'Conjunto de cortadores com tema natalino.', price: 59.90, category: 'Presentes & Articulados', badges: ['PLA Sólido', 'Conjunto'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/diversos/conjunto-cortador-biscoito.webp' }] },
+      { id: 'jesus-maria-jose', name: 'Jesus, Maria e José', specs: 'Presépio decorativo', description: 'Conjunto decorativo de Jesus, Maria e José.', price: 69.90, category: 'Decoração & Presépios', badges: ['PLA Sólido', 'Conjunto'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/diversos/jesus-maria-jose.webp' }] },
+      { id: 'kit-natalino', name: 'Kit Natalino', specs: 'Kit decorativo', description: 'Kit de peças com tema natalino.', price: 100.00, category: 'Presentes & Articulados', badges: ['PLA Sólido', 'Conjunto'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/diversos/kit-natalino.jfif' }] },
+      { id: 'enfeite-biscoitos', name: 'Enfeite de Biscoitos', specs: 'Enfeite para árvore', description: 'Enfeite natalino com tema de biscoitos.', price: 39.90, category: 'Enfeites de Árvore', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/enfeites-arvore/enfeite-biscoitos.webp' }] },
+      { id: 'enfeites-padrao', name: 'Enfeites de Natal', specs: 'Enfeites para árvore', description: 'Conjunto de enfeites natalinos.', price: 59.90, category: 'Enfeites de Árvore', badges: ['PLA Sólido', 'Conjunto'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/enfeites-arvore/enfeites-padrao.png' }] },
+      { id: 'flocos-de-neve', name: 'Flocos de Neve', specs: 'Enfeites para árvore', description: 'Enfeites natalinos em formato de floco de neve.', price: 39.90, category: 'Enfeites de Árvore', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/enfeites-arvore/flocos.webp' }] },
+      { id: 'lacinhos-natalinos', name: 'Lacinhos Natalinos', specs: 'Enfeites para árvore', description: 'Enfeites natalinos em formato de lacinho.', price: 39.90, category: 'Enfeites de Árvore', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/enfeites-arvore/lacinho.webp' }] },
+      { id: 'sueter-personalizado', name: 'Suéter com Nome', specs: 'Enfeite personalizado', description: 'Enfeite natalino em formato de suéter com nome.', price: 39.90, category: 'Enfeites de Árvore', badges: ['PLA Sólido', 'Personalizável'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/enfeites-arvore/sueter-nome.webp' }] },
+      { id: 'casa-gengibre', name: 'Casa de Gengibre', specs: 'Peça montável', description: 'Casa natalina montável com tema de gengibre.', price: 59.90, category: 'Decoração & Presépios', badges: ['PLA Sólido', 'Montável'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/montaveis/casa-gengibre.webp' }] },
+      { id: 'casa-natalina', name: 'Casa Natalina', specs: 'Peça montável', description: 'Casa decorativa com tema natalino.', price: 59.90, category: 'Decoração & Presépios', badges: ['PLA Sólido', 'Montável'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/montaveis/casa-natalina.webp' }] },
+      { id: 'casinha-biscoito', name: 'Casinha de Biscoito', specs: 'Peça montável', description: 'Casinha decorativa com tema de biscoito.', price: 59.90, category: 'Decoração & Presépios', badges: ['PLA Sólido', 'Montável'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/montaveis/casinha de biscoito.png' }] },
+      { id: 'casinha-nevada', name: 'Casinha Nevada', specs: 'Peça montável', description: 'Casinha natalina com visual nevado.', price: 59.90, category: 'Decoração & Presépios', badges: ['PLA Sólido', 'Montável'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/montaveis/casinha-nevada.png' }] },
+      { id: 'vila-gengibre', name: 'Vila de Gengibre', specs: 'Peça montável', description: 'Vila decorativa com tema de gengibre.', price: 79.90, category: 'Decoração & Presépios', badges: ['PLA Sólido', 'Montável'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/montaveis/vila-gengibre.png' }] },
+      { id: 'anjinho-croche', name: 'Anjinho de Crochê', specs: 'Peça decorativa', description: 'Anjinho natalino de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/anjinho.webp' }] },
+      { id: 'biscoito-croche', name: 'Biscoito de Crochê', specs: 'Peça decorativa', description: 'Biscoito natalino de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/biscoito.webp' }] },
+      { id: 'boneco-neve-croche', name: 'Boneco de Neve de Crochê', specs: 'Peça decorativa', description: 'Boneco de neve natalino de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/boneco-neve.webp' }] },
+      { id: 'gnomo-croche', name: 'Gnomo de Crochê', specs: 'Peça decorativa', description: 'Gnomo natalino de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/gnomo.webp' }] },
+      { id: 'jesus-croche', name: 'Jesus de Crochê', specs: 'Peça decorativa', description: 'Imagem natalina de Jesus em crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/jesus.webp' }] },
+      { id: 'mamae-noel-croche', name: 'Mamãe Noel de Crochê', specs: 'Peça decorativa', description: 'Mamãe Noel de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/mamae-noel.webp' }] },
+      { id: 'papai-noel-croche', name: 'Papai Noel de Crochê', specs: 'Peça decorativa', description: 'Papai Noel de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/papai-noel.webp' }] },
+      { id: 'polar-croche', name: 'Urso Polar de Crochê', specs: 'Peça decorativa', description: 'Urso polar natalino de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/polar.webp' }] },
+      { id: 'rena-croche', name: 'Rena de Crochê', specs: 'Peça decorativa', description: 'Rena natalina de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/rena-croche.webp' }] },
+      { id: 'rena-decorativa-croche', name: 'Rena Decorativa de Crochê', specs: 'Peça decorativa', description: 'Rena decorativa natalina de crochê.', price: 39.90, category: 'Crochê', badges: ['PLA Sólido'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/pecas-croche/rena.webp' }] },
+      { id: 'porta-copos-biscoito', name: 'Porta-copos de Biscoito', specs: 'Kit para mesa', description: 'Porta-copos com tema de biscoito.', price: 59.90, category: 'Presentes & Articulados', badges: ['PLA Sólido', 'Conjunto'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/porta-copos/biscoito.webp' }] },
+      { id: 'porta-copos-papai-noel-rena', name: 'Porta-copos Papai Noel e Rena', specs: 'Kit para mesa', description: 'Porta-copos com tema de Papai Noel e rena.', price: 59.90, category: 'Presentes & Articulados', badges: ['PLA Sólido', 'Conjunto'], colorOptions: [{ id: 'padrao', name: 'Padrão', hex: '#D9232E', imageUrl: 'images/porta-copos/papai-noel-e-rena.webp' }] }
+    ];
+
+    for (let i = PRODUCTS.length - 1; i > 0; i--) {
+      const randomIndex = Math.floor(Math.random() * (i + 1));
+      [PRODUCTS[i], PRODUCTS[randomIndex]] = [PRODUCTS[randomIndex], PRODUCTS[i]];
+    }
+    // ===================== FIM DO [LOCAL 2 DE 3] ============================
+
+    /**
+- Retorna a imagem configurada em `imageUrl` preenchendo 100% do espaço
+- (`object-cover`) ou, caso ainda não haja link, gera o SVG adaptado à cor.
+     */
+    function getProductVisual(productId, colorId, mode = 'card') {
+      const product = PRODUCTS.find((p) => p.id === productId);
+      const colorOpt = product
+        ? product.colorOptions.find((c) => c.id === colorId) || product.colorOptions[0]
+        : null;
+
+      const svgMarkup = getProductSVG(productId, colorOpt ? colorOpt.id : '');
+
+      const svgWrapperClass =
+        mode === 'card'
+          ? 'w-20 h-20 sm:w-32 sm:h-32 transition-transform duration-300 group-hover:scale-105'
+          : mode === 'thumb'
+            ? 'w-full h-full p-2 flex items-center justify-center'
+            : 'w-44 h-44 sm:w-48 sm:h-48 flex items-center justify-center';
+
+      const imgHoverClass = mode === 'card' ? 'transition-transform duration-300 group-hover:scale-105' : '';
+
+      if (colorOpt && colorOpt.imageUrl && colorOpt.imageUrl.trim() !== '') {
+        return `
+          <img
+            src="${colorOpt.imageUrl}"
+            alt="${product.name} - ${colorOpt.name}"
+            class="w-full h-full object-cover ${imgHoverClass}"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div style="display:none;" class="w-full h-full items-center justify-center">
+            <div class="${svgWrapperClass}">
+              ${svgMarkup}
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="${svgWrapperClass}">
+          ${svgMarkup}
+        </div>
+      `;
+    }
+
+    /**
+     * Ilustrações vetoriais SVG dinâmicas por cor para cada produto
+     */
+    function getProductSVG(productId, colorId) {
+      const uid = `${productId}-${colorId || 'default'}`;
+
+      const baublePalettes = {
+        'vermelho-ouro': { light: '#FB7185', mid: '#E11D48', dark: '#881337', band: '#F5B800' },
+        'verde-ouro': { light: '#34D399', mid: '#1B7A43', dark: '#064E3B', band: '#F5B800' },
+        'ouro-champagne': { light: '#FEF08A', mid: '#EAB308', dark: '#92400E', band: '#D9232E' }
+      };
+      const bp = baublePalettes[colorId] || baublePalettes['vermelho-ouro'];
+
+      const presepioPalettes = {
+        'branco-ouro': { archLight: '#FFFFFF', archDark: '#CBD5E1', accent: '#D4AF37' },
+        'areia-terracota': { archLight: '#FDE68A', archDark: '#D97706', accent: '#92400E' },
+        'verde-sagrada': { archLight: '#A7F3D0', archDark: '#1B7A43', accent: '#F5B800' }
+      };
+      const pp = presepioPalettes[colorId] || presepioPalettes['branco-ouro'];
+
+      const lithoBases = {
+        'base-preta': '#111111',
+        'base-vermelha': '#D9232E',
+        'base-dourada': '#D4AF37'
+      };
+      const lithoBaseColor = lithoBases[colorId] || '#111111';
+
+      const spiralPalettes = {
+        'verde-ouro': { outerLight: '#34D399', outerDark: '#064E3B', inner: '#D4AF37' },
+        'vermelho-ouro': { outerLight: '#FB7185', outerDark: '#9F1239', inner: '#F5B800' },
+        'prata-neve': { outerLight: '#F8FAFC', outerDark: '#64748B', inner: '#38BDF8' }
+      };
+      const sp = spiralPalettes[colorId] || spiralPalettes['verde-ouro'];
+
+      const starPalettes = {
+        'ouro-silk': { light: '#FEF08A', mid: '#D4AF37', dark: '#92400E' },
+        'prata-silk': { light: '#FFFFFF', mid: '#CBD5E1', dark: '#475569' },
+        'vermelho-silk': { light: '#FDA4AF', mid: '#E11D48', dark: '#881337' }
+      };
+      const stp = starPalettes[colorId] || starPalettes['ouro-silk'];
+
+      const renaPalettes = {
+        'caramelo-natal': { body: '#B45309', bodyAlt: '#92400E', scarf: '#22C55E', nose: '#D9232E' },
+        'branco-artico': { body: '#F8FAFC', bodyAlt: '#E2E8F0', scarf: '#F5B800', nose: '#D9232E' },
+        'dourado-festivo': { body: '#F5B800', bodyAlt: '#D97706', scarf: '#D9232E', nose: '#111111' }
+      };
+      const rp = renaPalettes[colorId] || renaPalettes['caramelo-natal'];
+
+      const flakePalettes = {
+        'prata-gelo': { f1: '#CBD5E1', f2: '#38BDF8', f3: '#D4AF37' },
+        'branco-perola': { f1: '#FFFFFF', f2: '#E2E8F0', f3: '#CBD5E1' },
+        'ouro-brilhante': { f1: '#F5B800', f2: '#FDE68A', f3: '#D97706' }
+      };
+      const fp = flakePalettes[colorId] || flakePalettes['prata-gelo'];
+
+      const trenoPalettes = {
+        'vermelho-ouro': { body: '#E11D48', runner: '#D4AF37' },
+        'verde-ouro': { body: '#1B7A43', runner: '#F5B800' },
+        'branco-ouro': { body: '#F8FAFC', runner: '#D4AF37' }
+      };
+      const tp = trenoPalettes[colorId] || trenoPalettes['vermelho-ouro'];
+
+      const svgs = {
+        'bola-natal-nome': `
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="baubleGrad-${uid}" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="${bp.light}"/>
+                <stop offset="45%" stop-color="${bp.mid}"/>
+                <stop offset="100%" stop-color="${bp.dark}"/>
+              </radialGradient>
+            </defs>
+            <path d="M100 10V36" stroke="${bp.band}" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="100" cy="34" r="6" stroke="${bp.band}" stroke-width="2.5"/>
+            <rect x="88" y="38" width="24" height="12" rx="3" fill="${bp.band}" stroke="#111111" stroke-width="1.5"/>
+            <circle cx="100" cy="114" r="64" fill="url(#baubleGrad-${uid})" stroke="#111111" stroke-width="2"/>
+            <path d="M38 104C60 92 140 92 162 104L160 128C138 116 62 116 40 128L38 104Z" fill="${bp.band}" stroke="#111111" stroke-width="1.8"/>
+            <polygon points="100,101 103,108 111,109 105,114 107,122 100,118 93,122 95,114 89,109 97,108" fill="#FFFFFF" stroke="#111111" stroke-width="1.6"/>
+            <ellipse cx="74" cy="76" rx="13" ry="7" transform="rotate(-30 74 76)" fill="rgba(255,255,255,0.38)"/>
+          </svg>
+        `,
+        'presepio-minimalista': `
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="archGrad-${uid}" x1="20%" y1="0%" x2="80%" y2="100%">
+                <stop offset="0%" stop-color="${pp.archLight}"/>
+                <stop offset="100%" stop-color="${pp.archDark}"/>
+              </linearGradient>
+            </defs>
+            <path d="M44 166C44 92 68 38 100 38C132 38 156 92 156 166H138C138 104 121 60 100 60C79 60 62 104 62 166H44Z" fill="url(#archGrad-${uid})" stroke="#111111" stroke-width="2"/>
+            <path d="M100 14L103 23L112 26L103 29L100 38L97 29L88 26L97 23L100 14Z" fill="${pp.accent}" stroke="#111111" stroke-width="1.5"/>
+            <path d="M72 166C72 128 79 106 87 106C94 106 97 126 97 166H72Z" fill="url(#archGrad-${uid})" stroke="#111111" stroke-width="1.8"/>
+            <circle cx="85" cy="95" r="7" fill="${pp.accent}" stroke="#111111" stroke-width="1.6"/>
+            <path d="M103 166C103 134 109 114 116 114C123 114 127 134 127 166H103Z" fill="url(#archGrad-${uid})" stroke="#111111" stroke-width="1.8"/>
+            <circle cx="115" cy="104" r="6" fill="${pp.accent}" stroke="#111111" stroke-width="1.6"/>
+            <path d="M91 153H109L106 166H94L91 153Z" fill="${pp.accent}" stroke="#111111" stroke-width="1.6"/>
+            <circle cx="100" cy="148" r="4.5" fill="#FEF08A" stroke="#111111" stroke-width="1.5"/>
+            <path d="M24 166C24 138 29 122 35 122C41 122 44 138 44 166H24Z" fill="url(#archGrad-${uid})" stroke="#111111" stroke-width="1.6"/>
+            <circle cx="34" cy="113" r="5" fill="${pp.accent}" stroke="#111111" stroke-width="1.5"/>
+            <path d="M156 166C156 138 161 122 167 122C173 122 176 138 176 166H156Z" fill="url(#archGrad-${uid})" stroke="#111111" stroke-width="1.6"/>
+            <circle cx="166" cy="113" r="5" fill="${pp.accent}" stroke="#111111" stroke-width="1.5"/>
+            <rect x="20" y="165" width="160" height="10" rx="5" fill="#111111"/>
+          </svg>
+        `,
+        'litofania-led': `
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="lithoGlow-${uid}" cx="50%" cy="48%" r="55%">
+                <stop offset="0%" stop-color="#FFFBEB"/>
+                <stop offset="55%" stop-color="#FDE68A"/>
+                <stop offset="100%" stop-color="#D97706"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="100" cy="96" rx="64" ry="70" fill="#F59E0B" fill-opacity="0.22"/>
+            <rect x="52" y="30" width="96" height="124" rx="14" fill="url(#lithoGlow-${uid})" stroke="#111111" stroke-width="2.5"/>
+            <path d="M54 124L74 96L90 112L114 82L146 124V146H54V124Z" fill="#B45309" fill-opacity="0.38"/>
+            <circle cx="88" cy="76" r="9" fill="#92400E" fill-opacity="0.45"/>
+            <circle cx="114" cy="74" r="9" fill="#92400E" fill-opacity="0.45"/>
+            <path d="M74 106C74 94 102 94 102 106V124H74V106Z" fill="#92400E" fill-opacity="0.42"/>
+            <path d="M100 104C100 92 128 92 128 104V124H100V104Z" fill="#92400E" fill-opacity="0.42"/>
+            <rect x="44" y="152" width="112" height="18" rx="8" fill="${lithoBaseColor}" stroke="#111111" stroke-width="2"/>
+            <rect x="64" y="149" width="72" height="4" rx="2" fill="#FDE68A"/>
+          </svg>
+        `,
+        'arvore-espiral-articulada': `
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="spiralGrad-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="${sp.outerLight}"/>
+                <stop offset="100%" stop-color="${sp.outerDark}"/>
+              </linearGradient>
+            </defs>
+            <path d="M100 32L76 146H124L100 32Z" fill="${sp.inner}" opacity="0.92"/>
+            <path d="M100 14L104 24L114 25L106 31L108 41L100 35L92 41L94 31L86 25L96 24L100 14Z" fill="${sp.inner}" stroke="#111111" stroke-width="1.6"/>
+            <path d="M90 54C98 50 112 52 114 60C116 68 82 72 80 82C78 92 124 94 126 104C128 114 70 118 68 128C66 138 134 140 138 152C140 160 62 162 58 168" stroke="url(#spiralGrad-${uid})" stroke-width="11" stroke-linecap="round"/>
+            <ellipse cx="100" cy="172" rx="46" ry="8" fill="url(#spiralGrad-${uid})" stroke="#111111" stroke-width="1.8"/>
+          </svg>
+        `,
+        'estrela-ponteira-vazada': `
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="starGrad-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="${stp.light}"/>
+                <stop offset="50%" stop-color="${stp.mid}"/>
+                <stop offset="100%" stop-color="${stp.dark}"/>
+              </linearGradient>
+            </defs>
+            <path d="M88 134C88 140 112 140 112 146C112 152 86 152 86 158C86 164 114 164 114 170C114 176 84 176 84 182" stroke="url(#starGrad-${uid})" stroke-width="5.5" stroke-linecap="round"/>
+            <polygon points="100,18 121,64 170,69 132,102 143,150 100,124 57,150 68,102 30,69 79,64" fill="none" stroke="url(#starGrad-${uid})" stroke-width="8" stroke-linejoin="round"/>
+            <polygon points="100,38 114,69 147,73 122,95 129,127 100,110 71,127 78,95 53,73 86,69" fill="none" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+            <polygon points="100,38 114,69 147,73 122,95 129,127 100,110 71,127 78,95 53,73 86,69" fill="none" stroke="${stp.light}" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="100" cy="86" r="7" fill="url(#starGrad-${uid})" stroke="#111111" stroke-width="1.8"/>
+          </svg>
+        `,
+        'rena-articulada-flexi': `
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M74 62L58 34L48 42M58 34L66 22M102 62L118 34L128 42M118 34L110 22" stroke="#D4AF37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="64" y="58" width="48" height="36" rx="16" fill="${rp.body}" stroke="#111111" stroke-width="2.5"/>
+            <circle cx="78" cy="73" r="3" fill="#111111"/>
+            <circle cx="98" cy="73" r="3" fill="#111111"/>
+            <circle cx="88" cy="83" r="5.5" fill="${rp.nose}" stroke="#111111" stroke-width="2"/>
+            <rect x="68" y="96" width="44" height="9" rx="4.5" fill="${rp.scarf}" stroke="#111111" stroke-width="2"/>
+            <rect x="66" y="108" width="32" height="26" rx="10" fill="${rp.body}" stroke="#111111" stroke-width="2.5"/>
+            <rect x="102" y="110" width="28" height="24" rx="9" fill="${rp.bodyAlt}" stroke="#111111" stroke-width="2.5"/>
+            <rect x="134" y="113" width="24" height="21" rx="8" fill="${rp.body}" stroke="#111111" stroke-width="2.5"/>
+            <circle cx="163" cy="116" r="6" fill="#FEF3C7" stroke="#111111" stroke-width="2"/>
+            <rect x="70" y="137" width="12" height="26" rx="6" fill="${rp.bodyAlt}" stroke="#111111" stroke-width="2.2"/>
+            <rect x="86" y="137" width="12" height="26" rx="6" fill="${rp.bodyAlt}" stroke="#111111" stroke-width="2.2"/>
+            <rect x="122" y="137" width="12" height="26" rx="6" fill="${rp.bodyAlt}" stroke="#111111" stroke-width="2.2"/>
+            <rect x="138" y="137" width="12" height="26" rx="6" fill="${rp.bodyAlt}" stroke="#111111" stroke-width="2.2"/>
+          </svg>
+        `,
+        'kit-flocos-neve': `
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(72, 72)">
+              <path d="M0 -40V40M-34 -20L34 20M-34 20L34 -20" stroke="${fp.f1}" stroke-width="5.5" stroke-linecap="round"/>
+              <path d="M-9 -28L0 -19L9 -28M-9 28L0 19L9 28M-28 -5L-17 -9L-20 -20M28 5L17 9L20 20" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="0" cy="0" r="8" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+            </g>
+            <g transform="translate(136, 98)">
+              <path d="M0 -34V34M-29 -17L29 17M-29 17L29 -17" stroke="${fp.f2}" stroke-width="5" stroke-linecap="round"/>
+              <polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+            </g>
+            <g transform="translate(80, 144)">
+              <path d="M0 -28V28M-24 -14L24 14M-24 14L24 -14" stroke="${fp.f3}" stroke-width="4.5" stroke-linecap="round"/>
+              <circle cx="0" cy="0" r="6" fill="#D9232E" stroke="#111111" stroke-width="1.8"/>
+            </g>
+          </svg>
+        `,
+        'treno-porta-panetone': `
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="panettoneDome-${uid}" x1="20%" y1="0%" x2="80%" y2="100%">
+                <stop offset="0%" stop-color="#F59E0B"/>
+                <stop offset="60%" stop-color="#B45309"/>
+                <stop offset="100%" stop-color="#78350F"/>
+              </linearGradient>
+            </defs>
+            <path d="M62 106C62 66 80 48 106 48C132 48 150 66 150 106H62Z" fill="url(#panettoneDome-${uid})" stroke="#111111" stroke-width="2.2"/>
+            <path d="M76 66C86 56 126 56 136 66C130 74 120 68 112 74C104 80 96 70 86 74C80 76 78 70 76 66Z" fill="#FEF3C7"/>
+            <path d="M36 96C46 96 52 108 62 108H154C160 108 164 114 162 122L152 150H54L40 112C38 106 32 102 36 96Z" fill="${tp.body}" stroke="#111111" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M32 166H164C174 166 180 158 176 150" stroke="${tp.runner}" stroke-width="5.5" stroke-linecap="round"/>
+            <line x1="68" y1="150" x2="64" y2="166" stroke="#111111" stroke-width="3"/>
+            <line x1="138" y1="150" x2="142" y2="166" stroke="#111111" stroke-width="3"/>
+          </svg>
+        `
+      };
+      return svgs[productId] || '';
+    }
+
+    // =========================================================================
+    // ESTADO DA APLICAÇÃO
+    // =========================================================================
+    const state = {
+      theme: 'light',
+      search: '',
+      category: 'Todos',
+      cart: [],
+      activeProduct: null,
+      selectedColorId: '',
+      modalQuantity: 1,
+      deliveryMethod: 'Retirada na Loja (Parque Prado, Campinas)',
+      customerName: ''
+    };
+
+    function loadSavedState() {
+      try {
+        const savedTheme = localStorage.getItem('encantto3d_natal_theme');
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+          state.theme = savedTheme;
+        }
+        const savedCart = localStorage.getItem('encantto3d_natal_cart');
+        if (savedCart) {
+          const parsed = JSON.parse(savedCart);
+          if (Array.isArray(parsed)) state.cart = parsed;
+        }
+        const savedName = localStorage.getItem('encantto3d_natal_customer');
+        if (savedName) state.customerName = savedName;
+      } catch (err) {
+        // Fallback silencioso
+      }
+    }
+
+    function persistState() {
+      try {
+        localStorage.setItem('encantto3d_natal_theme', state.theme);
+        localStorage.setItem('encantto3d_natal_cart', JSON.stringify(state.cart));
+        localStorage.setItem('encantto3d_natal_customer', state.customerName);
+      } catch (err) {
+        // Fallback silencioso
+      }
+    }
+
+    function formatBRL(value) {
+      return value.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      });
+    }
+
+    // =========================================================================
+    // TEMA CLARO / ESCURO
+    // =========================================================================
+    function applyTheme() {
+      const html = document.documentElement;
+      if (state.theme === 'dark') {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
+    }
+
+    function toggleTheme() {
+      state.theme = state.theme === 'dark' ? 'light' : 'dark';
+      applyTheme();
+      persistState();
+    }
+
+    // =========================================================================
+    // RENDERIZAÇÃO DE FILTROS E PRODUTOS
+    // =========================================================================
+    function renderCategoryFilters() {
+      const container = document.getElementById('categoryFilters');
+      if (!container) return;
+
+      container.innerHTML = CATEGORIES.map((cat) => {
+        const isActive = state.category === cat;
+        const activeClasses = isActive
+          ? 'bg-natal-pineDeep text-natal-gold border-2 border-natal-ink shadow-brutal-xs'
+          : 'bg-white dark:bg-natal-darkCard text-natal-ink dark:text-neutral-200 border-2 border-natal-ink hover:bg-natal-gold hover:text-natal-ink shadow-brutal-xs';
+
+        return `
+          <button
+            type="button"
+            role="tab"
+            aria-selected="${isActive}"
+            onclick="selectCategory('${cat.replace(/'/g, "\\'")}')"
+            class="px-4 py-2 rounded-full whitespace-nowrap text-xs sm:text-sm font-extrabold encantto-btn ${activeClasses}"
+          >
+            ${cat}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectCategory(category) {
+      state.category = category;
+      renderCategoryFilters();
+      renderProductsGrid();
+    }
+
+    /**
+     * Alterna o layout superior durante uma pesquisa ativa para exibir
+     * os itens do catálogo imediatamente abaixo da barra de busca.
+     */
+    function syncSearchLayout(shouldScrollTop = false) {
+      const query = state.search.trim();
+      const isSearching = query.length > 0;
+
+      const heroSection = document.getElementById('heroSection');
+      const marqueeStrip = document.getElementById('marqueeStrip');
+      const catalogSection = document.getElementById('catalogo');
+      const catalogBadge = document.getElementById('catalogBadge');
+      const catalogHeading = document.getElementById('catalogHeading');
+      const desktopClearBtn = document.getElementById('desktopClearSearchBtn');
+      const mobileClearBtn = document.getElementById('mobileClearSearchBtn');
+      const mainContent = document.getElementById('mainContent');
+      const mobileSearchContainer = document.getElementById('mobileSearchContainer');
+
+      if (mainContent && mobileSearchContainer) {
+        const isMobileSearchOpen = !mobileSearchContainer.classList.contains('hidden');
+        mainContent.classList.toggle('pt-28', isMobileSearchOpen);
+        mainContent.classList.toggle('md:pt-20', isMobileSearchOpen);
+        mainContent.classList.toggle('pt-16', !isMobileSearchOpen);
+        mainContent.classList.toggle('sm:pt-20', !isMobileSearchOpen);
+      }
+
+      if (desktopClearBtn) desktopClearBtn.classList.toggle('hidden', !isSearching);
+      if (mobileClearBtn) mobileClearBtn.classList.toggle('hidden', !isSearching);
+
+      if (heroSection) heroSection.classList.toggle('hidden', isSearching);
+      if (marqueeStrip) marqueeStrip.classList.toggle('hidden', isSearching);
+
+      if (catalogSection) {
+        catalogSection.classList.toggle('pt-4', isSearching);
+        catalogSection.classList.toggle('sm:pt-6', isSearching);
+        catalogSection.classList.toggle('pt-10', !isSearching);
+        catalogSection.classList.toggle('sm:pt-12', !isSearching);
+      }
+
+      if (catalogBadge) {
+        catalogBadge.textContent = isSearching ? 'Pesquisa Rápida' : 'Catálogo Oficial de Natal';
+      }
+
+      if (catalogHeading) {
+        catalogHeading.textContent = isSearching
+          ? `Resultados para "${query}"`
+          : 'Escolha suas peças e cores 3D';
+      }
+
+      if (isSearching && shouldScrollTop && window.scrollY > 20) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function clearSearchQuery() {
+      state.search = '';
+      const desktopInput = document.getElementById('desktopSearchInput');
+      const mobileInput = document.getElementById('mobileSearchInput');
+      if (desktopInput) desktopInput.value = '';
+      if (mobileInput) mobileInput.value = '';
+
+      syncSearchLayout(false);
+      renderProductsGrid();
+    }
+
+    function handleSearchButtonClick() {
+      if (state.search.trim().length > 0) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        document.getElementById('desktopSearchInput')?.focus();
+      }
+    }
+
+    function resetAllFilters() {
+      state.search = '';
+      state.category = 'Todos';
+
+      const desktopInput = document.getElementById('desktopSearchInput');
+      const mobileInput = document.getElementById('mobileSearchInput');
+      if (desktopInput) desktopInput.value = '';
+      if (mobileInput) mobileInput.value = '';
+
+      syncSearchLayout(false);
+      renderCategoryFilters();
+      renderProductsGrid();
+    }
+
+    /**
+     * =========================================================================
+     * [LOCAL 3 DE 3] MOLDE VISUAL (HTML) DE CADA CARD DO CATÁLOGO
+     * -------------------------------------------------------------------------
+     * A função `renderProductsGrid()` abaixo monta cada card (<article>)
+     * e injeta todos eles dentro da <div id="productsGrid"> lá no HTML.
+     * É aqui que você altera o visual/layout interno dos cards (selos,
+     * tamanho da caixa da imagem, fontes, botão "Escolher Cor", etc.).
+     * =========================================================================
+     */
+    function renderProductsGrid() {
+      const grid = document.getElementById('productsGrid');
+      const emptyState = document.getElementById('emptyState');
+      const resultsCount = document.getElementById('resultsCount');
+      const resetBtn = document.getElementById('resetFiltersBtn');
+      if (!grid) return;
+
+      const query = state.search.trim().toLowerCase();
+
+      const filtered = PRODUCTS.filter((product) => {
+        const matchesCategory = state.category === 'Todos' || product.category === state.category;
+        const matchesSearch =
+          !query ||
+          product.name.toLowerCase().includes(query) ||
+          product.description.toLowerCase().includes(query) ||
+          product.category.toLowerCase().includes(query) ||
+          product.specs.toLowerCase().includes(query);
+        return matchesCategory && matchesSearch;
+      });
+
+      const hasActiveFilters = state.category !== 'Todos' || query.length > 0;
+      if (resetBtn) {
+        resetBtn.classList.toggle('hidden', !hasActiveFilters);
+      }
+
+      if (resultsCount) {
+        resultsCount.textContent =
+          filtered.length === 1
+            ? 'Exibindo 1 produto natalino'
+            : `Exibindo ${filtered.length} produtos natalinos`;
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        grid.classList.add('hidden');
+        if (emptyState) emptyState.classList.remove('hidden');
+        return;
+      }
+
+      grid.classList.remove('hidden');
+      if (emptyState) emptyState.classList.add('hidden');
+
+      // --- INÍCIO DO HTML DE CADA CARD DO CATÁLOGO (<article>) ---
+      grid.innerHTML = filtered.map((product) => {
+        const defaultOpt = product.colorOptions[0];
+        const badgesHtml = product.badges
+          .map((badge) => {
+            const isHighlight = badge === '3 Cores' || badge === 'Articulada' || badge === 'Ponteira';
+            const badgeStyle = isHighlight
+              ? 'bg-natal-red text-white'
+              : 'bg-natal-pineDeep text-natal-gold';
+            return `
+              <span class="inline-flex items-center px-2 sm:px-2.5 py-0.5 rounded-full whitespace-nowrap text-[9px] sm:text-[11px] font-extrabold border border-natal-ink ${badgeStyle}">
+                ${badge}
+              </span>
+            `;
+          })
+          .join('');
+
+        return `
+          <article class="encantto-card flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-white dark:bg-natal-darkCard border-2 border-natal-ink dark:border-natal-gold/40 shadow-brutal-sm sm:shadow-brutal p-3 sm:p-5">
+            <div>
+              <!-- Selos no topo do card -->
+              <div class="flex flex-wrap items-center gap-1 sm:gap-1.5 mb-2 sm:mb-3">
+                ${badgesHtml}
+              </div>
+
+              <!-- Vitrine (Imagem) do Produto -->
+              <button
+                type="button"
+                onclick="openProductModal('${product.id}')"
+                aria-label="Ver opções de ${product.name}"
+                class="w-full h-36 sm:h-48 rounded-xl sm:rounded-2xl bg-natal-snow dark:bg-natal-darkSurface border-2 border-natal-ink/15 overflow-hidden relative flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-natal-red"
+              >
+                ${getProductVisual(product.id, defaultOpt.id, 'card')}
+              </button>
+
+              <!-- Título e Especificações -->
+              <div class="mt-2.5 sm:mt-4">
+                <h3 class="text-[13px] sm:text-base font-black tracking-tight text-natal-ink dark:text-white leading-tight sm:leading-snug">
+                  ${product.name}
+                </h3>
+                <p class="mt-1 text-[10px] sm:text-xs font-semibold text-neutral-600 dark:text-neutral-300 leading-snug">
+                  ${product.specs}
+                </p>
+              </div>
+            </div>
+
+            <!-- Preço e Botão Escolher Cor -->
+            <div class="mt-3.5 sm:mt-5 pt-3 sm:pt-4 border-t-2 border-natal-ink/10 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <span class="block text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                  A partir de
+                </span>
+                <span class="text-base sm:text-lg font-black text-natal-ink dark:text-natal-gold">
+                  ${formatBRL(product.price)}
+                </span>
+              </div>
+
+              <button
+                type="button"
+                onclick="openProductModal('${product.id}')"
+                class="w-full sm:w-auto text-center px-3 sm:px-4 py-2 sm:py-2.5 rounded-full sm:whitespace-nowrap bg-natal-gold hover:bg-natal-goldHover text-natal-ink font-extrabold text-[11px] sm:text-xs border-2 border-natal-ink shadow-brutal-xs encantto-btn"
+              >
+                Escolher Cor
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+      // --- FIM DO HTML DE CADA CARD DO CATÁLOGO ---
+    }
+    // ===================== FIM DO [LOCAL 3 DE 3] ============================
+
+    // =========================================================================
+    // MODAL DE SELEÇÃO DE COR E QUANTIDADE DO PRODUTO
+    // =========================================================================
+    function openProductModal(productId) {
+      const product = PRODUCTS.find((p) => p.id === productId);
+      if (!product) return;
+
+      state.activeProduct = product;
+      state.selectedColorId = product.colorOptions[0].id;
+      state.modalQuantity = 1;
+
+      document.getElementById('modalCategory').textContent = product.category;
+      document.getElementById('modalSpecs').textContent = product.specs;
+      document.getElementById('modalTitle').textContent = product.name;
+      document.getElementById('modalDescription').textContent = product.description;
+      document.getElementById('modalPrice').textContent = formatBRL(product.price);
+
+      renderModalColorOptions();
+      updateModalPricing();
+
+      const modal = document.getElementById('productModal');
+      const backdrop = document.getElementById('modalBackdrop');
+      const panel = document.getElementById('modalPanel');
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('opacity-0', 'scale-95');
+        panel.classList.add('opacity-100', 'scale-100');
+      });
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('productModal');
+      const backdrop = document.getElementById('modalBackdrop');
+      const panel = document.getElementById('modalPanel');
+
+      backdrop.classList.add('opacity-0');
+      panel.classList.remove('opacity-100', 'scale-100');
+      panel.classList.add('opacity-0', 'scale-95');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+        state.activeProduct = null;
+      }, 220);
+    }
+
+    function renderModalColorOptions() {
+      if (!state.activeProduct) return;
+      const container = document.getElementById('filamentSwatches');
+      const artworkContainer = document.getElementById('modalArtworkContainer');
+      const options = state.activeProduct.colorOptions;
+      const activeOption = options.find((c) => c.id === state.selectedColorId) || options[0];
+
+      document.getElementById('selectedFilamentName').textContent = activeOption.name;
+      document.getElementById('modalColorLabel').textContent = activeOption.name;
+      document.getElementById('modalColorDot').style.backgroundColor = activeOption.hex;
+
+      // Ajusta a moldura da vitrine do modal para foto cheia ou ilustração SVG
+      const hasPhoto = activeOption.imageUrl && activeOption.imageUrl.trim() !== '';
+      artworkContainer.className = hasPhoto
+        ? 'relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-natal-ink shadow-brutal bg-white flex items-center justify-center'
+        : 'relative w-44 h-44 sm:w-48 sm:h-48 flex items-center justify-center animate-float-gentle';
+
+      // Atualiza a imagem na vitrine do modal conforme a cor selecionada
+      artworkContainer.innerHTML = getProductVisual(
+        state.activeProduct.id,
+        activeOption.id,
+        'modal'
+      );
+
+      container.innerHTML = options.map((opt) => {
+        const isSelected = opt.id === state.selectedColorId;
+        const ringClass = isSelected
+          ? 'ring-2 ring-offset-2 ring-natal-red dark:ring-natal-gold scale-105 bg-natal-snow dark:bg-natal-darkSurface'
+          : 'bg-white dark:bg-natal-darkCard opacity-85 hover:opacity-100';
+
+        return `
+          <button
+            type="button"
+            onclick="selectModalColor('${opt.id}')"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border-2 border-natal-ink text-xs font-extrabold text-natal-ink dark:text-white transition-all ${ringClass}"
+          >
+            <span class="w-3.5 h-3.5 rounded-full border border-natal-ink shrink-0" style="background-color: ${opt.hex};"></span>
+            <span>${opt.name}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectModalColor(colorId) {
+      state.selectedColorId = colorId;
+      renderModalColorOptions();
+    }
+
+    function updateModalQty(delta) {
+      state.modalQuantity = Math.max(1, Math.min(99, state.modalQuantity + delta));
+      updateModalPricing();
+    }
+
+    function updateModalPricing() {
+      if (!state.activeProduct) return;
+      document.getElementById('modalQtyDisplay').textContent = state.modalQuantity;
+      const subtotal = state.activeProduct.price * state.modalQuantity;
+      document.getElementById('modalSubtotalBtn').textContent = `• ${formatBRL(subtotal)}`;
+    }
+
+    function addConfiguredProductToCart() {
+      if (!state.activeProduct) return;
+
+      const options = state.activeProduct.colorOptions;
+      const selectedOpt = options.find((c) => c.id === state.selectedColorId) || options[0];
+
+      const existingIndex = state.cart.findIndex(
+        (item) =>
+          item.productId === state.activeProduct.id &&
+          item.colorId === selectedOpt.id
+      );
+
+      if (existingIndex > -1) {
+        state.cart[existingIndex].quantity += state.modalQuantity;
+      } else {
+        state.cart.push({
+          productId: state.activeProduct.id,
+          name: state.activeProduct.name,
+          price: state.activeProduct.price,
+          colorId: selectedOpt.id,
+          colorName: selectedOpt.name,
+          colorHex: selectedOpt.hex,
+          quantity: state.modalQuantity
+        });
+      }
+
+      persistState();
+      updateCartBadge();
+      renderCartDrawer();
+      const addedName = state.activeProduct.name;
+      closeProductModal();
+      showToast(`"${addedName}" adicionado ao orçamento!`);
+    }
+
+    // =========================================================================
+    // MODAL DE ENCOMENDA PERSONALIZADA
+    // =========================================================================
+    function openCustomIdeaModal() {
+      const modal = document.getElementById('customIdeaModal');
+      const backdrop = document.getElementById('customIdeaBackdrop');
+      const panel = document.getElementById('customIdeaPanel');
+      if (!modal) return;
+
+      const nameField = document.getElementById('ideaNameInput');
+      if (nameField && state.customerName && !nameField.value) {
+        nameField.value = state.customerName;
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('opacity-0', 'scale-95');
+        panel.classList.add('opacity-100', 'scale-100');
+      });
+    }
+
+    function closeCustomIdeaModal() {
+      const modal = document.getElementById('customIdeaModal');
+      const backdrop = document.getElementById('customIdeaBackdrop');
+      const panel = document.getElementById('customIdeaPanel');
+      if (!modal) return;
+
+      backdrop.classList.add('opacity-0');
+      panel.classList.remove('opacity-100', 'scale-100');
+      panel.classList.add('opacity-0', 'scale-95');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 220);
+    }
+
+    function submitCustomIdeaForm(event) {
+      event.preventDefault();
+      const name = document.getElementById('ideaNameInput').value.trim();
+      const projectType = document.getElementById('ideaTypeSelect').value;
+      const details = document.getElementById('ideaDetailsInput').value.trim();
+
+      if (!name || !details) {
+        showToast('Preencha seu nome e os detalhes do projeto.');
+        return;
+      }
+
+      state.customerName = name;
+      persistState();
+
+      const message = [
+        '🎄 *SOLICITAÇÃO DE PROJETO PERSONALIZADO — ENCANTT03D*',
+        '',
+        `👤 *Cliente:* ${name}`,
+        `✨ *Tipo de Projeto:* ${projectType}`,
+        `📝 *Detalhes da Ideia:* ${details}`,
+        '',
+        'Gostaria de verificar prazo e orçamento para essa peça em 3D!'
+      ].join('\n');
+
+      closeCustomIdeaModal();
+      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    // =========================================================================
+    // GAVETA LATERAL DE ORÇAMENTO & WHATSAPP
+    // =========================================================================
+    function openCartDrawer() {
+      renderCartDrawer();
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const panel = document.getElementById('drawerPanel');
+
+      drawer.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('translate-x-full');
+        panel.classList.add('translate-x-0');
+      });
+    }
+
+    function closeCartDrawer() {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const panel = document.getElementById('drawerPanel');
+
+      backdrop.classList.add('opacity-0');
+      panel.classList.remove('translate-x-0');
+      panel.classList.add('translate-x-full');
+
+      setTimeout(() => {
+        drawer.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 260);
+    }
+
+    function updateCartBadge() {
+      const badge = document.getElementById('cartBadge');
+      if (!badge) return;
+      const totalItems = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+      badge.textContent = totalItems;
+    }
+
+    function renderCartDrawer() {
+      const itemsContainer = document.getElementById('cartItemsContainer');
+      const emptyMsg = document.getElementById('emptyCartMessage');
+      const checkoutSection = document.getElementById('checkoutFormSection');
+      const footer = document.getElementById('drawerFooter');
+      const totalDisplay = document.getElementById('cartTotalDisplay');
+      const nameInput = document.getElementById('customerNameInput');
+
+      if (nameInput && state.customerName && !nameInput.value) {
+        nameInput.value = state.customerName;
+      }
+
+      if (state.cart.length === 0) {
+        itemsContainer.innerHTML = '';
+        emptyMsg.classList.remove('hidden');
+        checkoutSection.classList.add('hidden');
+        footer.classList.add('hidden');
+        return;
+      }
+
+      emptyMsg.classList.add('hidden');
+      checkoutSection.classList.remove('hidden');
+      footer.classList.remove('hidden');
+
+      let totalAmount = 0;
+
+      itemsContainer.innerHTML = state.cart.map((item, idx) => {
+        const lineTotal = item.price * item.quantity;
+        totalAmount += lineTotal;
+
+        return `
+          <div class="p-4 rounded-2xl bg-white dark:bg-natal-darkCard border-2 border-natal-ink shadow-brutal-xs flex gap-3.5">
+            <div class="w-16 h-16 rounded-xl bg-natal-snow dark:bg-natal-darkSurface border border-natal-ink/20 overflow-hidden shrink-0 flex items-center justify-center">
+              ${getProductVisual(item.productId, item.colorId, 'thumb')}
+            </div>
+
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-2">
+                <h4 class="text-xs sm:text-sm font-black text-natal-ink dark:text-white leading-snug">
+                  ${item.name}
+                </h4>
+                <button
+                  type="button"
+                  onclick="removeCartItem(${idx})"
+                  aria-label="Remover item"
+                  class="text-neutral-400 hover:text-natal-red transition-colors p-1"
+                >
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="mt-1.5 flex flex-wrap items-center gap-1.5 text-[11px] font-bold">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full whitespace-nowrap bg-natal-snow dark:bg-natal-darkSurface border border-natal-ink text-natal-ink dark:text-neutral-200">
+                  <span class="w-2.5 h-2.5 rounded-full border border-natal-ink shrink-0" style="background-color: ${item.colorHex};"></span>
+                  ${item.colorName}
+                </span>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between">
+                <div class="inline-flex items-center rounded-full bg-natal-snow dark:bg-natal-darkSurface border border-natal-ink p-0.5">
+                  <button
+                    type="button"
+                    onclick="updateCartItemQty(${idx}, -1)"
+                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold text-natal-ink dark:text-white hover:bg-natal-gold hover:text-natal-ink"
+                  >
+                    −
+                  </button>
+                  <span class="w-7 text-center text-xs font-extrabold text-natal-ink dark:text-white">
+                    ${item.quantity}
+                  </span>
+                  <button
+                    type="button"
+                    onclick="updateCartItemQty(${idx}, 1)"
+                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold text-natal-ink dark:text-white hover:bg-natal-gold hover:text-natal-ink"
+                  >
+                    +
+                  </button>
+                </div>
+
+                <span class="text-sm font-black text-natal-ink dark:text-natal-gold">
+                  ${formatBRL(lineTotal)}
+                </span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      totalDisplay.textContent = formatBRL(totalAmount);
+      renderDeliveryMethodUI();
+    }
+
+    function updateCartItemQty(index, delta) {
+      if (!state.cart[index]) return;
+      const newQty = state.cart[index].quantity + delta;
+      if (newQty <= 0) {
+        state.cart.splice(index, 1);
+      } else {
+        state.cart[index].quantity = Math.min(99, newQty);
+      }
+      persistState();
+      updateCartBadge();
+      renderCartDrawer();
+    }
+
+    function removeCartItem(index) {
+      state.cart.splice(index, 1);
+      persistState();
+      updateCartBadge();
+      renderCartDrawer();
+      showToast('Item removido do orçamento.');
+    }
+
+    function setDeliveryMethod(method) {
+      if (!method || !method.startsWith('Retirada')) return;
+      state.deliveryMethod = 'Retirada na Loja (Parque Prado, Campinas)';
+      renderDeliveryMethodUI();
+    }
+
+    function renderDeliveryMethodUI() {
+      const pickupBtn = document.getElementById('pickupOptionBtn');
+      const deliveryBtn = document.getElementById('deliveryOptionBtn');
+      const pickupDot = document.getElementById('pickupRadioDot');
+      const deliveryDot = document.getElementById('deliveryRadioDot');
+      if (!pickupBtn || !deliveryBtn) return;
+
+      state.deliveryMethod = 'Retirada na Loja (Parque Prado, Campinas)';
+
+      pickupBtn.className = 'flex items-center justify-between gap-3 p-3 rounded-2xl border-2 text-left transition-all bg-natal-pine/20 border-natal-ink shadow-brutal-xs';
+
+      deliveryBtn.className = 'flex items-center justify-between gap-3 p-3 rounded-2xl border-2 border-neutral-950 bg-neutral-800 dark:bg-neutral-900 text-left cursor-not-allowed select-none opacity-90';
+
+      pickupDot.innerHTML = '<span class="w-2 h-2 rounded-full bg-natal-red"></span>';
+      pickupDot.className = 'w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center border-natal-ink bg-white';
+
+      deliveryDot.innerHTML = '';
+      deliveryDot.className = 'w-4 h-4 rounded-full border-2 border-neutral-600 bg-neutral-900 shrink-0 flex items-center justify-center';
+    }
+
+    function buildWhatsAppOrderMessage(customerName) {
+      let total = 0;
+      const lines = [
+        '🎄 *ORÇAMENTO DE NATAL — ENCANTT03D*',
+        '',
+        `👤 *Cliente:* ${customerName}`,
+        `📦 *Recebimento:* ${state.deliveryMethod}`,
+        '',
+        '*Itens Selecionados:*'
+      ];
+
+      state.cart.forEach((item, index) => {
+        const sub = item.price * item.quantity;
+        total += sub;
+        lines.push(`${index + 1}. *${item.quantity}x ${item.name}*`);
+        lines.push(`   • Cor: ${item.colorName}`);
+        lines.push(`   • Valor: ${formatBRL(sub)}`);
+      });
+
+      lines.push('');
+      lines.push(`💰 *Total Estimado:* ${formatBRL(total)}`);
+      lines.push('');
+      lines.push('Olá, equipe Encantto3D! Gostaria de confirmar o prazo de produção para esse pedido de Natal.');
+
+      return lines.join('\n');
+    }
+
+    function finalizeWhatsAppOrder() {
+      if (state.cart.length === 0) return;
+
+      const nameInput = document.getElementById('customerNameInput');
+      const nameError = document.getElementById('customerNameError');
+      const customerName = nameInput ? nameInput.value.trim() : '';
+
+      if (!customerName) {
+        if (nameError) nameError.classList.remove('hidden');
+        if (nameInput) nameInput.focus();
+        return;
+      }
+
+      if (nameError) nameError.classList.add('hidden');
+      state.customerName = customerName;
+      persistState();
+
+      const text = buildWhatsAppOrderMessage(customerName);
+      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    function copyOrderSummary() {
+      if (state.cart.length === 0) return;
+      const nameInput = document.getElementById('customerNameInput');
+      const customerName = (nameInput && nameInput.value.trim()) || state.customerName || 'Cliente';
+      const summary = buildWhatsAppOrderMessage(customerName);
+
+      const tempArea = document.createElement('textarea');
+      tempArea.value = summary;
+      tempArea.style.position = 'fixed';
+      tempArea.style.left = '-9999px';
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      try {
+        document.execCommand('copy');
+        showToast('Resumo do orçamento copiado!');
+      } catch (err) {
+        showToast('Não foi possível copiar o resumo.');
+      }
+      document.body.removeChild(tempArea);
+    }
+
+    function openDirectWhatsApp() {
+      const msg = 'Olá, Encantto3D! 🎄 Estava vendo o Catálogo Especial de Natal e gostaria de tirar uma dúvida.';
+      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    // =========================================================================
+    // NOTIFICAÇÃO TOAST
+    // =========================================================================
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const msgEl = document.getElementById('toastMessage');
+      if (!toast || !msgEl) return;
+
+      msgEl.textContent = message;
+      toast.classList.remove('opacity-0', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-3');
+      }, 2800);
+    }
+
+    // =========================================================================
+    // INICIALIZAÇÃO
+    // =========================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      loadSavedState();
+      applyTheme();
+      renderCategoryFilters();
+      renderProductsGrid();
+      updateCartBadge();
+
+      const themeBtn = document.getElementById('themeToggleBtn');
+      if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+
+      const openCartBtn = document.getElementById('openCartBtn');
+      if (openCartBtn) openCartBtn.addEventListener('click', openCartDrawer);
+
+      const resetBtn = document.getElementById('resetFiltersBtn');
+      if (resetBtn) resetBtn.addEventListener('click', resetAllFilters);
+
+      const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+      const mobileSearchContainer = document.getElementById('mobileSearchContainer');
+      if (mobileSearchToggle && mobileSearchContainer) {
+        mobileSearchToggle.addEventListener('click', () => {
+          mobileSearchContainer.classList.toggle('hidden');
+          syncSearchLayout(false);
+          if (!mobileSearchContainer.classList.contains('hidden')) {
+            document.getElementById('mobileSearchInput')?.focus();
+          }
+        });
+      }
+
+      const desktopSearch = document.getElementById('desktopSearchInput');
+      const mobileSearch = document.getElementById('mobileSearchInput');
+
+      if (desktopSearch) {
+        desktopSearch.addEventListener('input', (e) => {
+          state.search = e.target.value;
+          if (mobileSearch) mobileSearch.value = e.target.value;
+          syncSearchLayout(true);
+          renderProductsGrid();
+        });
+      }
+
+      if (mobileSearch) {
+        mobileSearch.addEventListener('input', (e) => {
+          state.search = e.target.value;
+          if (desktopSearch) desktopSearch.value = e.target.value;
+          syncSearchLayout(true);
+          renderProductsGrid();
+        });
+
+        mobileSearch.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            mobileSearch.blur();
+          }
+        });
+      }
+
+      const customerNameInput = document.getElementById('customerNameInput');
+      if (customerNameInput) {
+        customerNameInput.addEventListener('input', (e) => {
+          state.customerName = e.target.value;
+          if (e.target.value.trim()) {
+            document.getElementById('customerNameError')?.classList.add('hidden');
+          }
+          persistState();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeProductModal();
+          closeCustomIdeaModal();
+          closeCartDrawer();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
